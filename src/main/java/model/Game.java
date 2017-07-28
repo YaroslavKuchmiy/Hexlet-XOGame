@@ -1,8 +1,6 @@
 package model;
 
 
-import model.exception.Player;
-
 public class Game {
 
     private final String name;

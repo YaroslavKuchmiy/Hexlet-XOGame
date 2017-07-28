@@ -1,4 +1,4 @@
-package model.exception;
+package model;
 
 
 import model.Figure;
