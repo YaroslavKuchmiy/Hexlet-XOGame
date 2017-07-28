@@ -1,11 +1,13 @@
 package model;
 
 
+import model.exception.Player;
+
 public class Game {
 
     private final String name;
-    private final String player1;
-    private final String player2;
+    private final Player player1;
+    private final Player player2;
     private final Field field;
 
     public Game(final GameBuilder gameBuilder) {
@@ -19,11 +21,11 @@ public class Game {
         return name;
     }
 
-    public String getPlayer1() {
+    public Player getPlayer1() {
         return player1;
     }
 
-    public String getPlayer2() {
+    public Player getPlayer2() {
         return player2;
     }
 
@@ -34,19 +36,19 @@ public class Game {
     public class GameBuilder {
 
         public String name;
-        public String player1;
-        public String player2;
+        public Player player1;
+        public Player player2;
         public Field field;
 
         public GameBuilder name(String name){
             this.name = name;
             return this;
         }
-        public GameBuilder player1(String player1){
+        public GameBuilder player1(Player player1){
             this.player1 = player1;
             return this;
         }
-        public GameBuilder player2(String player2){
+        public GameBuilder player2(Player player2){
             this.player2 = player2;
             return this;
         }
@@ -58,10 +60,10 @@ public class Game {
         public String getName(){
             return this.name;
         }
-        public String getPlayer1(){
+        public Player getPlayer1(){
             return this.player1;
         }
-        public String getPlayer2(){
+        public Player getPlayer2(){
             return this.player2;
         }
         public Field getField(){
