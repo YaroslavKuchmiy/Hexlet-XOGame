@@ -1,6 +1,7 @@
-package model.exception;
+package model;
 
 import model.Figure;
+import model.Player;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
