@@ -31,7 +31,7 @@ public class Game {
         return field;
     }
 
-    public class GameBuilder {
+    public static class GameBuilder {
 
         public String name;
         public Player player1;
