@@ -21,11 +21,13 @@ public class WinnerController {
 
     private Figure checkROwAndColumn(final Field field) {
         for (int i = 0; i < field.getSize(); i++) {
-            if (field.getFigure(new Point(i, index0)) == field.getFigure(new Point(i, index1)) &&
+            if (field.getFigure(new Point(i, index0)) != null &&
+                    field.getFigure(new Point(i, index0)) == field.getFigure(new Point(i, index1)) &&
                     field.getFigure(new Point(i, index0)) == field.getFigure(new Point(i, index2))) {
                 return winnerFigure = field.getFigure(new Point(i, index0));
             }
-            if (field.getFigure(new Point(index0, i)) == field.getFigure(new Point(index1, i)) &&
+            if (field.getFigure(new Point(index0, i)) != null &&
+                    field.getFigure(new Point(index0, i)) == field.getFigure(new Point(index1, i)) &&
                     field.getFigure(new Point(index0, i)) == field.getFigure(new Point(index2, i))) {
                 return winnerFigure = field.getFigure(new Point(index0, i));
             }
@@ -34,7 +36,8 @@ public class WinnerController {
     }
 
     private Figure checkDiag1(final Field field) {
-        if (field.getFigure(new Point(index0, index0)) == field.getFigure(new Point(index1, index1)) &&
+        if (field.getFigure(new Point(index0, index0)) != null &&
+                field.getFigure(new Point(index0, index0)) == field.getFigure(new Point(index1, index1)) &&
                 field.getFigure(new Point(index0, index0)) == field.getFigure(new Point(index2, index2))) {
             return winnerFigure = field.getFigure(new Point(index0, index0));
         }
@@ -42,7 +45,8 @@ public class WinnerController {
     }
 
     private Figure checkDiag2(final Field field) {
-        if (field.getFigure(new Point(index0, index2)) == field.getFigure(new Point(index1, index1)) &&
+        if (field.getFigure(new Point(index0, index2)) != null &&
+                field.getFigure(new Point(index0, index2)) == field.getFigure(new Point(index1, index1)) &&
                 field.getFigure(new Point(index1, index1)) == field.getFigure(new Point(index2, index0))) {
             return winnerFigure = field.getFigure(new Point(index1, index1));
         }
