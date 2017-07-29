@@ -6,6 +6,6 @@
 
 Игра реализована на базе курсов сайта [Hexlet](https://ru.hexlet.io)
 
-UML is local ( E:\XO\UML\)
+UML in Hexlet-XOGame/Class XO.asta
 
 **~~Создатель кода~~** Главный бездельник -  [*YaroslavKuchmiy*](https://www.facebook.com/profile.php?id=100006520172879)
