@@ -4,6 +4,7 @@ package controller;
 import model.Field;
 import model.Figure;
 import model.Point;
+import model.exception.InvalidPointException;
 
 public class WinnerController {
 
@@ -13,13 +14,17 @@ public class WinnerController {
     private Figure winnerFigure;
 
     public Figure getWinner(final Field field) {
-        if (checkROwAndColumn(field) != null || checkDiag1(field) != null || checkDiag2(field) != null){
-            return winnerFigure;
+        try {
+            if (checkROwAndColumn(field) != null || checkDiag1(field) != null || checkDiag2(field) != null){
+                return winnerFigure;
+            }
+        } catch (InvalidPointException e) {
+            e.printStackTrace();
         }
         return null;
     }
 
-    private Figure checkROwAndColumn(final Field field) {
+    private Figure checkROwAndColumn(final Field field) throws InvalidPointException {
         for (int i = 0; i < field.getSize(); i++) {
             if (field.getFigure(new Point(i, index0)) != null &&
                     field.getFigure(new Point(i, index0)) == field.getFigure(new Point(i, index1)) &&
@@ -35,7 +40,7 @@ public class WinnerController {
         return null;
     }
 
-    private Figure checkDiag1(final Field field) {
+    private Figure checkDiag1(final Field field) throws InvalidPointException {
         if (field.getFigure(new Point(index0, index0)) != null &&
                 field.getFigure(new Point(index0, index0)) == field.getFigure(new Point(index1, index1)) &&
                 field.getFigure(new Point(index0, index0)) == field.getFigure(new Point(index2, index2))) {
@@ -44,7 +49,7 @@ public class WinnerController {
         return null;
     }
 
-    private Figure checkDiag2(final Field field) {
+    private Figure checkDiag2(final Field field) throws InvalidPointException {
         if (field.getFigure(new Point(index0, index2)) != null &&
                 field.getFigure(new Point(index0, index2)) == field.getFigure(new Point(index1, index1)) &&
                 field.getFigure(new Point(index1, index1)) == field.getFigure(new Point(index2, index0))) {
