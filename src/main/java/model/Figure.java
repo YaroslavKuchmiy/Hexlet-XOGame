@@ -3,6 +3,6 @@ package model;
 
 public enum Figure {
 
-    X,O
+    X, O
 
 }

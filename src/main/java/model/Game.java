@@ -38,37 +38,37 @@ public class Game {
         public Player player2;
         public Field field;
 
-        public GameBuilder name(String name){
+        public GameBuilder name(final String name) {
             this.name = name;
             return this;
         }
-        public GameBuilder player1(Player player1){
+        public GameBuilder player1(final Player player1) {
             this.player1 = player1;
             return this;
         }
-        public GameBuilder player2(Player player2){
+        public GameBuilder player2(final Player player2) {
             this.player2 = player2;
             return this;
         }
-        public GameBuilder field(Field field){
+        public GameBuilder field(final Field field) {
             this.field = field;
             return this;
         }
 
-        public String getName(){
+        public String getName() {
             return this.name;
         }
-        public Player getPlayer1(){
+        public Player getPlayer1() {
             return this.player1;
         }
-        public Player getPlayer2(){
+        public Player getPlayer2() {
             return this.player2;
         }
-        public Field getField(){
+        public Field getField() {
             return this.field;
         }
 
-        public Game build(){
+        public Game build() {
             return new Game(this);
         }
 

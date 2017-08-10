@@ -1,8 +1,6 @@
 package model;
 
 
-import model.Figure;
-
 public class Player {
 
     private final String name;
