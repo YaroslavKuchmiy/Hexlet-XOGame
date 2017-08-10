@@ -4,6 +4,7 @@ package controller;
 import model.Field;
 import model.Figure;
 import model.Point;
+import model.exception.InvalidPointException;
 
 public class CurrentMoveController {
 
@@ -11,7 +12,11 @@ public class CurrentMoveController {
     private int countO = 0;
 
     public Figure currentMove(final Field field){
-        accountFiguresOnTheField(field);
+        try {
+            accountFiguresOnTheField(field);
+        } catch (InvalidPointException e) {
+            e.printStackTrace();
+        }
 
         if (countO + countX == field.getSize() * field.getSize()){
             return null;
@@ -22,7 +27,7 @@ public class CurrentMoveController {
         return Figure.O;
     }
 
-    private void accountFiguresOnTheField (final Field field){
+    private void accountFiguresOnTheField (final Field field) throws InvalidPointException {
         for (int x = 0; x < field.getSize(); x++) {
             for (int y = 0; y < field.getSize(); y++){
                 if (field.getFigure(new Point(x, y)) == Figure.X){
